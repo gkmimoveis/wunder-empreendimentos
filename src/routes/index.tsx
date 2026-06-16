@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useRef } from "react";
-import { MapPin, Play, MessageCircle, Images, Menu, X, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { MapPin, Play, Images, Menu, X, Phone, Mail, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
@@ -140,8 +140,8 @@ function Header() {
           rel="noreferrer"
           className="hidden md:inline-flex"
         >
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            <MessageCircle className="mr-1.5 h-4 w-4" /> Falar agora
+          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+            <WhatsAppIcon className="mr-1.5 h-4 w-4" /> Falar agora
           </Button>
         </a>
         <button
@@ -169,9 +169,9 @@ function Header() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 flex items-center justify-center gap-2 rounded-md bg-primary px-3 py-2.5 text-sm font-semibold text-primary-foreground"
+              className="mt-2 flex items-center justify-center gap-2 rounded-md bg-primary px-3 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-primary"
             >
-              <MessageCircle className="h-4 w-4" /> Falar no WhatsApp
+              <WhatsAppIcon className="h-4 w-4" /> Falar no WhatsApp
             </a>
           </div>
         </div>
@@ -198,15 +198,15 @@ function Hero() {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-              <Button size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 sm:w-auto">
-                <MessageCircle className="mr-2 h-5 w-5" /> Falar com um corretor
+              <Button size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary sm:w-auto">
+                <WhatsAppIcon className="mr-2 h-5 w-5" /> Falar com um corretor
               </Button>
             </a>
             <a href="#empreendimentos">
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full border-white/15 bg-transparent text-foreground hover:bg-card sm:w-auto"
+                className="w-full border-white/15 bg-transparent text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground sm:w-auto"
               >
                 Ver empreendimentos
               </Button>
@@ -214,11 +214,11 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative mt-10 overflow-hidden rounded-2xl border border-white/10 bg-card shadow-2xl sm:mt-14">
-          <div className="absolute right-4 top-4 z-10 grid h-20 w-20 place-items-center rounded-full bg-primary text-center text-primary-foreground shadow-lg sm:right-6 sm:top-6 sm:h-24 sm:w-24">
+        <div className="relative mt-10 overflow-hidden rounded-2xl border border-white/10 bg-card shadow-2xl shadow-primary/20 sm:mt-14">
+          <div className="absolute left-1/2 top-4 z-10 grid h-24 w-24 -translate-x-1/2 place-items-center rounded-full border-2 border-primary-foreground bg-primary text-center text-primary-foreground shadow-2xl shadow-primary/40 sm:left-auto sm:right-6 sm:top-6 sm:h-28 sm:w-28 sm:translate-x-0">
             <div>
               <div className="text-[10px] font-semibold uppercase tracking-wider">Até</div>
-              <div className="text-xl font-black leading-none sm:text-2xl">100x</div>
+              <div className="text-2xl font-black leading-none sm:text-3xl">100x</div>
               <div className="text-[10px] font-semibold uppercase tracking-wider">para pagar</div>
             </div>
           </div>
@@ -276,7 +276,7 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
   };
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-card shadow-lg transition-transform hover:-translate-y-1">
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-card shadow-xl shadow-primary/10 transition-transform hover:-translate-y-1">
       <div className="relative">
         <div className="absolute left-3 top-3 z-10">
           <Badge className="rounded-md border-0 bg-primary px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-foreground">
@@ -300,15 +300,15 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
         </video>
         {!playing ? (
           <>
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 via-background/20 to-transparent" />
             <button
               type="button"
               onClick={handlePlay}
               aria-label={`Reproduzir vídeo de ${item.nome}`}
               className="absolute inset-0 grid place-items-center"
             >
-              <span className="grid h-12 w-12 place-items-center rounded-full bg-primary/95 text-primary-foreground shadow-2xl ring-4 ring-primary/30 transition-transform hover:scale-110 sm:h-16 sm:w-16">
-                <Play className="ml-1 h-5 w-5 fill-current sm:h-6 sm:w-6" />
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-primary/95 text-primary-foreground shadow-2xl shadow-primary/40 ring-2 ring-primary/30 transition-transform hover:scale-110 sm:h-14 sm:w-14">
+                <Play className="ml-1 h-4 w-4 fill-current sm:h-5 sm:w-5" />
               </span>
             </button>
           </>
@@ -336,8 +336,8 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
             rel="noreferrer"
             className="flex-1"
           >
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-              <MessageCircle className="mr-1.5 h-4 w-4" /> Fale com o corretor
+            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <WhatsAppIcon className="mr-1.5 h-4 w-4" /> Fale com o corretor
             </Button>
           </a>
           <GaleriaDialog item={item} />
@@ -354,7 +354,7 @@ function GaleriaDialog({ item }: { item: Empreendimento }) {
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className="flex-1 border-white/15 bg-transparent text-foreground hover:bg-background"
+          className="flex-1 border-white/15 bg-transparent text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground"
         >
           <Images className="mr-1.5 h-4 w-4" /> Ver imagens
         </Button>
@@ -395,7 +395,7 @@ function CallToAction() {
             size="lg"
             className="border-2 border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary"
           >
-            <MessageCircle className="mr-2 h-5 w-5" /> Entrar em Contato
+            <WhatsAppIcon className="mr-2 h-5 w-5" /> Entrar em Contato
           </Button>
         </a>
       </div>
@@ -415,11 +415,11 @@ function SobreGKM() {
             Há mais de 10 anos construindo sonhos.
           </p>
         </div>
-        <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-card shadow-xl">
+        <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-card shadow-xl shadow-primary/10">
           <div className="relative aspect-video w-full">
             <iframe
               className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
+              src="https://www.youtube.com/embed/FiL2Dbt9lC0?start=21&rel=0"
               title="Apresentação GKM Imóveis"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -552,9 +552,23 @@ function FloatingWhatsapp() {
       target="_blank"
       rel="noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-2xl shadow-primary/40 transition-transform hover:scale-110 sm:bottom-7 sm:right-7"
+      className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-2xl shadow-primary/40 transition-all hover:scale-110 hover:bg-primary-foreground hover:text-primary sm:bottom-7 sm:right-7"
     >
-      <MessageCircle className="h-6 w-6" />
+      <WhatsAppIcon className="h-6 w-6" />
     </a>
+  );
+}
+
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 448 512"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.9zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-6.7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-82.8 184.6-184.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.2 23.5 8.3 31.5 10.6 13.2 4.2 25.2 3.6 34.7 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5.1-3.9-10.6-6.6z" />
+    </svg>
   );
 }
