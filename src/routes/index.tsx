@@ -140,8 +140,8 @@ function Header() {
           rel="noreferrer"
           className="hidden md:inline-flex"
         >
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            <MessageCircle className="mr-1.5 h-4 w-4" /> Falar agora
+          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+            <WhatsAppIcon className="mr-1.5 h-4 w-4" /> Falar agora
           </Button>
         </a>
         <button
@@ -169,9 +169,9 @@ function Header() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 flex items-center justify-center gap-2 rounded-md bg-primary px-3 py-2.5 text-sm font-semibold text-primary-foreground"
+              className="mt-2 flex items-center justify-center gap-2 rounded-md bg-primary px-3 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-primary"
             >
-              <MessageCircle className="h-4 w-4" /> Falar no WhatsApp
+              <WhatsAppIcon className="h-4 w-4" /> Falar no WhatsApp
             </a>
           </div>
         </div>
@@ -198,15 +198,15 @@ function Hero() {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-              <Button size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 sm:w-auto">
-                <MessageCircle className="mr-2 h-5 w-5" /> Falar com um corretor
+              <Button size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary sm:w-auto">
+                <WhatsAppIcon className="mr-2 h-5 w-5" /> Falar com um corretor
               </Button>
             </a>
             <a href="#empreendimentos">
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full border-white/15 bg-transparent text-foreground hover:bg-card sm:w-auto"
+                className="w-full border-white/15 bg-transparent text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground sm:w-auto"
               >
                 Ver empreendimentos
               </Button>
@@ -214,11 +214,11 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative mt-10 overflow-hidden rounded-2xl border border-white/10 bg-card shadow-2xl sm:mt-14">
-          <div className="absolute right-4 top-4 z-10 grid h-20 w-20 place-items-center rounded-full bg-primary text-center text-primary-foreground shadow-lg sm:right-6 sm:top-6 sm:h-24 sm:w-24">
+        <div className="relative mt-10 overflow-hidden rounded-2xl border border-white/10 bg-card shadow-2xl shadow-primary/20 sm:mt-14">
+          <div className="absolute left-1/2 top-4 z-10 grid h-24 w-24 -translate-x-1/2 place-items-center rounded-full border-2 border-primary-foreground bg-primary text-center text-primary-foreground shadow-2xl shadow-primary/40 sm:left-auto sm:right-6 sm:top-6 sm:h-28 sm:w-28 sm:translate-x-0">
             <div>
               <div className="text-[10px] font-semibold uppercase tracking-wider">Até</div>
-              <div className="text-xl font-black leading-none sm:text-2xl">100x</div>
+              <div className="text-2xl font-black leading-none sm:text-3xl">100x</div>
               <div className="text-[10px] font-semibold uppercase tracking-wider">para pagar</div>
             </div>
           </div>
@@ -276,7 +276,7 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
   };
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-card shadow-lg transition-transform hover:-translate-y-1">
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-card shadow-xl shadow-primary/10 transition-transform hover:-translate-y-1">
       <div className="relative">
         <div className="absolute left-3 top-3 z-10">
           <Badge className="rounded-md border-0 bg-primary px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-foreground">
@@ -300,15 +300,15 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
         </video>
         {!playing ? (
           <>
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 via-background/20 to-transparent" />
             <button
               type="button"
               onClick={handlePlay}
               aria-label={`Reproduzir vídeo de ${item.nome}`}
               className="absolute inset-0 grid place-items-center"
             >
-              <span className="grid h-12 w-12 place-items-center rounded-full bg-primary/95 text-primary-foreground shadow-2xl ring-4 ring-primary/30 transition-transform hover:scale-110 sm:h-16 sm:w-16">
-                <Play className="ml-1 h-5 w-5 fill-current sm:h-6 sm:w-6" />
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-primary/95 text-primary-foreground shadow-2xl shadow-primary/40 ring-2 ring-primary/30 transition-transform hover:scale-110 sm:h-14 sm:w-14">
+                <Play className="ml-1 h-4 w-4 fill-current sm:h-5 sm:w-5" />
               </span>
             </button>
           </>
@@ -336,8 +336,8 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
             rel="noreferrer"
             className="flex-1"
           >
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-              <MessageCircle className="mr-1.5 h-4 w-4" /> Fale com o corretor
+            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <WhatsAppIcon className="mr-1.5 h-4 w-4" /> Fale com o corretor
             </Button>
           </a>
           <GaleriaDialog item={item} />
@@ -354,7 +354,7 @@ function GaleriaDialog({ item }: { item: Empreendimento }) {
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className="flex-1 border-white/15 bg-transparent text-foreground hover:bg-background"
+          className="flex-1 border-white/15 bg-transparent text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground"
         >
           <Images className="mr-1.5 h-4 w-4" /> Ver imagens
         </Button>
@@ -395,7 +395,7 @@ function CallToAction() {
             size="lg"
             className="border-2 border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary"
           >
-            <MessageCircle className="mr-2 h-5 w-5" /> Entrar em Contato
+            <WhatsAppIcon className="mr-2 h-5 w-5" /> Entrar em Contato
           </Button>
         </a>
       </div>
@@ -415,11 +415,11 @@ function SobreGKM() {
             Há mais de 10 anos construindo sonhos.
           </p>
         </div>
-        <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-card shadow-xl">
+        <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-card shadow-xl shadow-primary/10">
           <div className="relative aspect-video w-full">
             <iframe
               className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
+              src="https://www.youtube.com/embed/FiL2Dbt9lC0?start=21&rel=0"
               title="Apresentação GKM Imóveis"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -552,9 +552,23 @@ function FloatingWhatsapp() {
       target="_blank"
       rel="noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-2xl shadow-primary/40 transition-transform hover:scale-110 sm:bottom-7 sm:right-7"
+      className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-2xl shadow-primary/40 transition-all hover:scale-110 hover:bg-primary-foreground hover:text-primary sm:bottom-7 sm:right-7"
     >
-      <MessageCircle className="h-6 w-6" />
+      <WhatsAppIcon className="h-6 w-6" />
     </a>
+  );
+}
+
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M12.004 0C5.373 0 .002 5.369.002 11.996c0 2.11.553 4.168 1.606 5.986L0 24l6.197-1.631c1.695.926 3.604 1.411 5.602 1.411h.005c6.626 0 11.999-5.369 12.006-11.996C24.01 5.373 18.64-.002 12.004 0Zm5.472 14.97c-.27.76-1.55 1.462-2.15 1.55-.55.084-1.05.27-3.48-.724-2.93-1.21-4.82-4.25-4.97-4.45-.15-.2-1.18-1.57-1.18-2.99 0-1.43.74-2.13.99-2.43.27-.31.59-.39.79-.39.2 0 .4 0 .57.01.18.01.42-.07.66.5.24.57.83 1.97.9 2.11.08.15.13.31.03.5-.1.2-.15.31-.3.47-.15.16-.31.35-.44.47-.15.13-.3.27-.13.53.17.27.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.44.29.14.49.12.67-.07.18-.19.78-.91.99-1.22.21-.31.42-.26.69-.16.27.11 1.73.82 2.03.97.29.15.49.22.57.35.07.13.07.75-.2 1.51Z" />
+    </svg>
   );
 }
