@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useRef } from "react";
-import { MapPin, Play, Images, Menu, X, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { MapPin, Play, Images, Menu, X, Phone, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
@@ -25,10 +25,8 @@ export const Route = createFileRoute("/")({
 });
 
 const WHATSAPP_URL =
-  "https://wa.me/5551999999999?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20Empreendimentos%20Wunder.";
+  "https://wa.me/555135612833?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20Empreendimentos%20Wunder.";
 
-const HERO_VIDEO_POSTER =
-  "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80";
 
 type Empreendimento = {
   nome: string;
@@ -222,18 +220,17 @@ function Hero() {
               <div className="text-[10px] font-semibold uppercase tracking-wider">para pagar</div>
             </div>
           </div>
-          <video
-            className="aspect-video w-full object-cover"
-            poster={HERO_VIDEO_POSTER}
-            controls
-            playsInline
-            preload="metadata"
-          >
-            <source
-              src="https://cdn.coverr.co/videos/coverr-an-modern-apartment-building-2806/1080p.mp4"
-              type="video/mp4"
+          <div className="relative aspect-video w-full">
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src="https://www.youtube.com/embed/3OsKrlkQa64?rel=0"
+              title="Empreendimentos Wunder - GKM Imóveis"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             />
-          </video>
+          </div>
         </div>
       </div>
     </section>
@@ -498,14 +495,18 @@ function Footer() {
             </p>
             <div className="mt-5 flex gap-2">
               <a
-                href="#"
+                href="https://www.facebook.com/Gkmimoveiseassistenciaresidencial"
+                target="_blank"
+                rel="noreferrer"
                 aria-label="Facebook"
                 className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
               >
                 <Facebook className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/gkmimoveis/"
+                target="_blank"
+                rel="noreferrer"
                 aria-label="Instagram"
                 className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
               >
@@ -516,23 +517,19 @@ function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider text-primary">Serviços</h4>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground">Crédito Pessoal</a></li>
-              <li><a href="#" className="hover:text-foreground">Aprove seu Financiamento</a></li>
-              <li><a href="#" className="hover:text-foreground">Indique e Ganhe</a></li>
-              <li><a href="#" className="hover:text-foreground">Anuncie seu Imóvel</a></li>
+              <li><a href="http://gkmfinanciamentos.com.br/" target="_blank" rel="noreferrer" className="hover:text-foreground">Aprove seu Financiamento</a></li>
+              <li><a href="https://site.indiqueeganhegkm.com.br/" target="_blank" rel="noreferrer" className="hover:text-foreground">Indique e Ganhe</a></li>
+              <li><a href="https://lp.gkmassistenciaresidencial.com.br/proprietarioresidencial/" target="_blank" rel="noreferrer" className="hover:text-foreground">Anuncie seu Imóvel</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider text-primary">Contato</h4>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li>Rua Pça. de Queimer, 158</li>
+              <li>Rua Eça de Queiroz, 158</li>
               <li>Centro, Estância Velha-RS</li>
               <li>CEP 93600-360</li>
               <li className="flex items-center gap-2 pt-2">
-                <Phone className="h-3.5 w-3.5 text-primary" /> (51) 99999-9999
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="h-3.5 w-3.5 text-primary" /> contato@gkmimoveis.com.br
+                <Phone className="h-3.5 w-3.5 text-primary" /> (51) 3561-2833
               </li>
             </ul>
           </div>
