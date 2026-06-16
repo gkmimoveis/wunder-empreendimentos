@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { MapPin, Play, MessageCircle, Images, Menu, X, Phone, Mail, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -264,6 +264,17 @@ function ProntosParaMorar() {
 }
 
 function EmpreendimentoCard({ item }: { item: Empreendimento }) {
+  const [playing, setPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.play()
+      .then(() => setPlaying(true))
+      .catch(() => {});
+  };
+
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-card shadow-lg transition-transform hover:-translate-y-1">
       <div className="relative">
@@ -273,21 +284,35 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
           </Badge>
         </div>
         <video
+          ref={videoRef}
           className="aspect-[4/3] w-full object-cover"
           poster={item.poster}
-          muted
-          loop
+          controls={playing}
           playsInline
           preload="metadata"
-          onMouseEnter={(ev) => ev.currentTarget.play().catch(() => {})}
-          onMouseLeave={(ev) => ev.currentTarget.pause()}
+          onPause={() => setPlaying(false)}
+          onEnded={() => setPlaying(false)}
         >
           <source
             src="https://cdn.coverr.co/videos/coverr-an-modern-apartment-building-2806/1080p.mp4"
             type="video/mp4"
           />
         </video>
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+        {!playing ? (
+          <>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+            <button
+              type="button"
+              onClick={handlePlay}
+              aria-label={`Reproduzir vídeo de ${item.nome}`}
+              className="absolute inset-0 grid place-items-center"
+            >
+              <span className="grid h-16 w-16 place-items-center rounded-full bg-primary/95 text-primary-foreground shadow-2xl ring-4 ring-primary/30 transition-transform hover:scale-110 sm:h-20 sm:w-20">
+                <Play className="ml-1 h-7 w-7 fill-current sm:h-8 sm:w-8" />
+              </span>
+            </button>
+          </>
+        ) : null}
       </div>
       <div className="flex flex-1 flex-col gap-4 p-5">
         <div className="flex items-center gap-1.5 text-xs text-primary">
@@ -533,6 +558,3 @@ function FloatingWhatsapp() {
     </a>
   );
 }
-
-// suppress unused warning for Play (kept for potential play overlays)
-void Play;
