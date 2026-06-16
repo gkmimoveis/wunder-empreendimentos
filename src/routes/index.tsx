@@ -27,8 +27,6 @@ export const Route = createFileRoute("/")({
 const WHATSAPP_URL =
   "https://wa.me/555135612833?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20Empreendimentos%20Wunder.";
 
-const HERO_VIDEO_POSTER =
-  "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80";
 
 type Empreendimento = {
   nome: string;
