@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { MapPin, Play, MessageCircle, Images, Menu, X, Phone, Mail, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -558,6 +558,3 @@ function FloatingWhatsapp() {
     </a>
   );
 }
-
-// suppress unused warning for Play (kept for potential play overlays)
-void Play;
