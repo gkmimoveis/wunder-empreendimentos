@@ -307,8 +307,8 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
               aria-label={`Reproduzir vídeo de ${item.nome}`}
               className="absolute inset-0 grid place-items-center"
             >
-              <span className="grid h-16 w-16 place-items-center rounded-full bg-primary/95 text-primary-foreground shadow-2xl ring-4 ring-primary/30 transition-transform hover:scale-110 sm:h-20 sm:w-20">
-                <Play className="ml-1 h-7 w-7 fill-current sm:h-8 sm:w-8" />
+              <span className="grid h-12 w-12 place-items-center rounded-full bg-primary/95 text-primary-foreground shadow-2xl ring-4 ring-primary/30 transition-transform hover:scale-110 sm:h-16 sm:w-16">
+                <Play className="ml-1 h-5 w-5 fill-current sm:h-6 sm:w-6" />
               </span>
             </button>
           </>
@@ -320,8 +320,8 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
           <span className="truncate">{item.bairro}</span>
         </div>
         <div>
-          <h3 className="text-lg font-bold tracking-tight">{item.nome}</h3>
-          <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+          <h3 className="border-b border-white/10 pb-3 text-lg font-bold tracking-tight">{item.nome}</h3>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             {item.descricao}
           </p>
         </div>
