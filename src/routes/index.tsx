@@ -6,6 +6,10 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import logoAsset from "@/assets/logo-gkm.png.asset.json";
 import cidadeAsset from "@/assets/estancia-velha-rs.webp.asset.json";
+import hcPrincipal from "@/assets/highcenter-principal.jpg.asset.json";
+import hcLazer from "@/assets/highcenter-lazer.jpg.asset.json";
+import hcSala from "@/assets/highcenter-sala.jpg.asset.json";
+import hcTerraco from "@/assets/highcenter-terraco.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -234,12 +238,10 @@ function Hero() {
 }
 
 const wunderHighCenterImagens = [
-  "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80",
+  hcPrincipal.url,
+  hcLazer.url,
+  hcSala.url,
+  hcTerraco.url,
 ];
 
 function WunderHighCenter() {
