@@ -86,6 +86,7 @@ function LandingPage() {
       <Header />
       <main>
         <Hero />
+        <WunderHighCenter />
         <ProntosParaMorar />
         <CallToAction />
         <SobreGKM />
