@@ -233,10 +233,6 @@ function Hero() {
   );
 }
 
-function ProntosParaMorar() {
-  return null as never;
-}
-
 const wunderHighCenterImagens = [
   "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80",
   "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80",
@@ -355,7 +351,7 @@ function WunderHighCenter() {
   );
 }
 
-function ProntosParaMoraz() {
+function ProntosParaMorar() {
   return (
     <section id="empreendimentos" className="py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
