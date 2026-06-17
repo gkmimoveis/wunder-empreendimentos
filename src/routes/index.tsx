@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import logoAsset from "@/assets/logo-gkm.png.asset.json";
+import cidadeAsset from "@/assets/estancia-velha-rs.webp.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -442,7 +443,7 @@ function SobreCidade() {
           </div>
           <div className="overflow-hidden rounded-xl">
             <img
-              src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1400&q=80"
+              src={cidadeAsset.url}
               alt="Estância Velha - RS"
               className="aspect-[4/3] w-full object-cover lg:aspect-auto lg:h-full"
               loading="lazy"
