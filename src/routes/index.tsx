@@ -86,6 +86,7 @@ function LandingPage() {
       <Header />
       <main>
         <Hero />
+        <WunderHighCenter />
         <ProntosParaMorar />
         <CallToAction />
         <SobreGKM />
@@ -228,6 +229,124 @@ function Hero() {
           </div>
         </div>
       </div>
+    </section>
+  );
+}
+
+const wunderHighCenterImagens = [
+  "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80",
+];
+
+function WunderHighCenter() {
+  const [open, setOpen] = useState(false);
+  return (
+    <section id="wunder-high-center" className="py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
+        <div>
+          <Badge className="rounded-full border-0 bg-primary px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-primary-foreground">
+            Em destaque
+          </Badge>
+          <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+            Wunder <span className="text-primary">High Center</span>
+          </h2>
+          <div className="mt-3 flex items-center gap-1.5 text-sm text-primary">
+            <MapPin className="h-4 w-4" />
+            <span>Estância Velha, RS</span>
+          </div>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+            O Wunder High Center é o mais novo empreendimento de alto padrão da região, unindo
+            arquitetura contemporânea, área de lazer completa e localização privilegiada no coração
+            de Estância Velha. Projetado para quem busca conforto, segurança e qualidade de vida,
+            com unidades amplas, acabamento premium e vista panorâmica da cidade.
+          </p>
+          <ul className="mt-5 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
+            <li>• Apartamentos de 2 e 3 dormitórios</li>
+            <li>• Piscina, academia e salão de festas</li>
+            <li>• Portaria 24h e segurança integrada</li>
+            <li>• Sacada gourmet com churrasqueira</li>
+          </ul>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+              <Button
+                size="lg"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary sm:w-auto"
+              >
+                <WhatsAppIcon className="mr-2 h-5 w-5" /> Fale com um corretor
+              </Button>
+            </a>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => setOpen(true)}
+              className="w-full border-white/15 bg-transparent text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground sm:w-auto"
+            >
+              <Images className="mr-2 h-5 w-5" /> Ver galeria
+            </Button>
+          </div>
+        </div>
+
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="group relative block w-full overflow-hidden rounded-2xl border border-white/10 bg-card shadow-2xl shadow-primary/20"
+            aria-label="Abrir galeria do Wunder High Center"
+          >
+            <img
+              src={wunderHighCenterImagens[0]}
+              alt="Wunder High Center - fachada principal"
+              className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+            <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-lg">
+              <Images className="h-4 w-4" /> Ver galeria ({wunderHighCenterImagens.length})
+            </span>
+          </button>
+          <div className="mt-3 grid grid-cols-3 gap-3">
+            {wunderHighCenterImagens.slice(1, 4).map((src, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setOpen(true)}
+                className="overflow-hidden rounded-xl border border-white/10"
+              >
+                <img
+                  src={src}
+                  alt={`Wunder High Center - miniatura ${i + 1}`}
+                  className="aspect-square w-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="max-w-5xl border-white/10 bg-card p-0">
+          <div className="border-b border-white/5 p-4 sm:p-5">
+            <DialogTitle className="text-base font-bold sm:text-lg">Wunder High Center</DialogTitle>
+            <div className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
+              <MapPin className="h-3 w-3 text-primary" /> Estância Velha, RS
+            </div>
+          </div>
+          <div className="grid max-h-[75vh] gap-2 overflow-y-auto p-3 sm:grid-cols-2 sm:p-4">
+            {wunderHighCenterImagens.map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt={`Wunder High Center - imagem ${i + 1}`}
+                loading="lazy"
+                className="aspect-[4/3] w-full rounded-lg object-cover"
+              />
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
