@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useRef } from "react";
-import { MapPin, Play, Images, Menu, X, Phone, Instagram, Facebook } from "lucide-react";
+import { MapPin, Play, Images, Menu, X, Phone, Instagram, Facebook, Check, Building2, Home, Car, Ruler } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
@@ -267,11 +267,39 @@ function WunderHighCenter() {
             com unidades amplas, acabamento premium e vista panorâmica da cidade.
           </p>
           <ul className="mt-5 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
-            <li>• Apartamentos de 2 e 3 dormitórios</li>
-            <li>• Piscina, academia e salão de festas</li>
-            <li>• Portaria 24h e segurança integrada</li>
-            <li>• Sacada gourmet com churrasqueira</li>
+            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500 shrink-0" /> Apartamentos de 2 e 3 dormitórios</li>
+            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500 shrink-0" /> Piscina, academia e salão de festas</li>
+            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500 shrink-0" /> Portaria 24h e segurança integrada</li>
+            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500 shrink-0" /> Sacada gourmet com churrasqueira</li>
           </ul>
+
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-card p-4 text-center">
+              <div className="grid h-10 w-10 place-items-center rounded-full bg-primary/10">
+                <Building2 className="h-5 w-5 text-primary" />
+              </div>
+              <span className="text-xs font-medium text-muted-foreground">12 Pavimentos</span>
+            </div>
+            <div className="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-card p-4 text-center">
+              <div className="grid h-10 w-10 place-items-center rounded-full bg-primary/10">
+                <Home className="h-5 w-5 text-primary" />
+              </div>
+              <span className="text-xs font-medium text-muted-foreground">35 Apartamentos</span>
+            </div>
+            <div className="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-card p-4 text-center">
+              <div className="grid h-10 w-10 place-items-center rounded-full bg-primary/10">
+                <Car className="h-5 w-5 text-primary" />
+              </div>
+              <span className="text-xs font-medium text-muted-foreground">2 Box por unidade</span>
+            </div>
+            <div className="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-card p-4 text-center">
+              <div className="grid h-10 w-10 place-items-center rounded-full bg-primary/10">
+                <Ruler className="h-5 w-5 text-primary" />
+              </div>
+              <span className="text-xs font-medium text-muted-foreground">4 Coberturas com 200m²</span>
+            </div>
+          </div>
+
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
               <Button
@@ -288,6 +316,14 @@ function WunderHighCenter() {
               className="w-full border-white/15 bg-transparent text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground sm:w-auto"
             >
               <Images className="mr-2 h-5 w-5" /> Ver galeria
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => setOpen(true)}
+              className="w-full border-white/15 bg-transparent text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground sm:w-auto"
+            >
+              <Images className="mr-2 h-5 w-5" /> Ver plantas
             </Button>
           </div>
         </div>
