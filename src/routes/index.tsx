@@ -24,9 +24,7 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const WHATSAPP_URL =
-  "https://wa.me/555135612833?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20Empreendimentos%20Wunder.";
-
+const WHATSAPP_URL = "https://wa.me/555135612833?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20Empreendimentos%20Wunder.";
 
 type Empreendimento = {
   nome: string;
@@ -41,11 +39,9 @@ const empreendimentos: Empreendimento[] = [
   {
     nome: "Residencial Saint Peter",
     bairro: "Centro, Estância Velha",
-    descricao:
-      "Unidades de 2 e 3 dormitórios, área de lazer completa com salão de festas, piscina e portaria 24h.",
+    descricao: "Unidades de 2 e 3 dormitórios, área de lazer completa com salão de festas, piscina e portaria 24h.",
     preco: "R$ 690.000",
-    poster:
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+    poster: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
     galeria: [
       "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80",
@@ -56,11 +52,9 @@ const empreendimentos: Empreendimento[] = [
   {
     nome: "Sagrado Coração de Jesus",
     bairro: "Centro, Estância Velha",
-    descricao:
-      "Apartamentos amplos com acabamento premium, sacada com churrasqueira e vista privilegiada da cidade.",
+    descricao: "Apartamentos amplos com acabamento premium, sacada com churrasqueira e vista privilegiada da cidade.",
     preco: "R$ 1.200.000",
-    poster:
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80",
+    poster: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80",
     galeria: [
       "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1400&q=80",
@@ -74,8 +68,7 @@ const empreendimentos: Empreendimento[] = [
     descricao:
       "Conforto e tranquilidade em meio ao verde. Plantas inteligentes e área de lazer pensada para a família.",
     preco: "R$ 620.000",
-    poster:
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
+    poster: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
     galeria: [
       "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1400&q=80",
@@ -132,13 +125,11 @@ function Header() {
             </a>
           ))}
         </nav>
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noreferrer"
-          className="hidden md:inline-flex"
-        >
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+        <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="hidden md:inline-flex">
+          <Button
+            size="sm"
+            className="bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+          >
             <WhatsAppIcon className="mr-1.5 h-4 w-4" /> Falar agora
           </Button>
         </a>
@@ -196,7 +187,10 @@ function Hero() {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-              <Button size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary sm:w-auto">
+              <Button
+                size="lg"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary sm:w-auto"
+              >
                 <WhatsAppIcon className="mr-2 h-5 w-5" /> Falar com um corretor
               </Button>
             </a>
@@ -223,7 +217,7 @@ function Hero() {
           <div className="relative aspect-video w-full">
             <iframe
               className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/3OsKrlkQa64?rel=0"
+              src="https://www.youtube.com/embed/WimktzXyGfg?rel=0"
               title="Empreendimentos Wunder - GKM Imóveis"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -242,9 +236,7 @@ function ProntosParaMorar() {
     <section id="empreendimentos" className="py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-black tracking-tight text-primary sm:text-4xl">
-            Prontos para Morar
-          </h2>
+          <h2 className="text-3xl font-black tracking-tight text-primary sm:text-4xl">Prontos para Morar</h2>
           <p className="mt-3 text-sm text-muted-foreground sm:text-base">
             Confira as opções com entrada facilitada e saldo em até 60x direto com a Construtora.
           </p>
@@ -318,21 +310,14 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
         </div>
         <div>
           <h3 className="border-b border-white/10 pb-3 text-lg font-bold tracking-tight">{item.nome}</h3>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            {item.descricao}
-          </p>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.descricao}</p>
         </div>
         <div className="mt-auto">
           <div className="text-xs text-muted-foreground">A partir de</div>
           <div className="text-xl font-black text-primary">{item.preco}</div>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="flex-1"
-          >
+          <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="flex-1">
             <Button className="w-full bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary">
               <WhatsAppIcon className="mr-1.5 h-4 w-4" /> Fale com o corretor
             </Button>
@@ -405,12 +390,8 @@ function SobreGKM() {
     <section id="sobre" className="py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-black tracking-tight text-primary sm:text-4xl">
-            Conheça a GKM Imóveis
-          </h2>
-          <p className="mt-3 text-sm text-muted-foreground sm:text-base">
-            Há mais de 10 anos construindo sonhos.
-          </p>
+          <h2 className="text-3xl font-black tracking-tight text-primary sm:text-4xl">Conheça a GKM Imóveis</h2>
+          <p className="mt-3 text-sm text-muted-foreground sm:text-base">Há mais de 10 anos construindo sonhos.</p>
         </div>
         <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-card shadow-xl shadow-primary/10">
           <div className="relative aspect-video w-full">
@@ -447,19 +428,16 @@ function SobreCidade() {
             </Badge>
             <h3 className="text-2xl font-black tracking-tight sm:text-3xl">68 anos de História</h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Conhecida internacionalmente como Capital Nacional do Couro, Estância Velha é um
-              município charmoso localizado na Região Metropolitana de Porto Alegre, bem na encosta
-              da Serra Gaúcha.
+              Conhecida internacionalmente como Capital Nacional do Couro, Estância Velha é um município charmoso
+              localizado na Região Metropolitana de Porto Alegre, bem na encosta da Serra Gaúcha.
             </p>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              O título de Capital do Couro não é à toa. Historicamente, a cidade se desenvolveu ao
-              redor do curtume e da indústria calçadista, moldando a economia e a identidade dos
-              moradores.
+              O título de Capital do Couro não é à toa. Historicamente, a cidade se desenvolveu ao redor do curtume e da
+              indústria calçadista, moldando a economia e a identidade dos moradores.
             </p>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Mesmo estando perto da capital e de grandes centros urbanos como Novo Hamburgo,
-              Estância Velha mantém seu ar de cidade acolhedora de interior, com ruas arborizadas e
-              uma rotina tranquila.
+              Mesmo estando perto da capital e de grandes centros urbanos como Novo Hamburgo, Estância Velha mantém seu
+              ar de cidade acolhedora de interior, com ruas arborizadas e uma rotina tranquila.
             </p>
           </div>
           <div className="overflow-hidden rounded-xl">
@@ -517,9 +495,36 @@ function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider text-primary">Serviços</h4>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li><a href="http://gkmfinanciamentos.com.br/" target="_blank" rel="noreferrer" className="hover:text-foreground">Aprove seu Financiamento</a></li>
-              <li><a href="https://site.indiqueeganhegkm.com.br/" target="_blank" rel="noreferrer" className="hover:text-foreground">Indique e Ganhe</a></li>
-              <li><a href="https://lp.gkmassistenciaresidencial.com.br/proprietarioresidencial/" target="_blank" rel="noreferrer" className="hover:text-foreground">Anuncie seu Imóvel</a></li>
+              <li>
+                <a
+                  href="http://gkmfinanciamentos.com.br/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-foreground"
+                >
+                  Aprove seu Financiamento
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://site.indiqueeganhegkm.com.br/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-foreground"
+                >
+                  Indique e Ganhe
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://lp.gkmassistenciaresidencial.com.br/proprietarioresidencial/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-foreground"
+                >
+                  Anuncie seu Imóvel
+                </a>
+              </li>
             </ul>
           </div>
           <div>
