@@ -240,7 +240,19 @@ function Hero() {
   );
 }
 
-const wunderHighCenterImagens = [hcPrincipal.url, hcLazer.url, hcSala.url, hcTerraco.url];
+const wunderHighCenterImagens = [
+  hcCapa.url,
+  hcLazer.url,
+  hcSala.url,
+  hcTerraco.url,
+  hc06.url,
+  hc07.url,
+  hc11.url,
+  hc12.url,
+  hc20.url,
+  hc21.url,
+  hc22.url,
+];
 
 function WunderHighCenter() {
   const [open, setOpen] = useState(false);
