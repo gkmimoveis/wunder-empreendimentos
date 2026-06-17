@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useRef } from "react";
-import { MapPin, Play, Images, Menu, X, Phone, Instagram, Facebook } from "lucide-react";
+import { MapPin, Play, Images, Menu, X, Phone, Instagram, Facebook, Check, Building2, Home, Car, Ruler } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
