@@ -4,6 +4,7 @@ import { MapPin, Play, Images, Menu, X, Phone, Instagram, Facebook } from "lucid
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import logoAsset from "@/assets/logo-gkm.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -107,12 +108,11 @@ function Header() {
     <header className="sticky top-0 z-40 border-b border-white/5 bg-background/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#hero" className="flex items-center gap-2">
-          <div className="grid h-9 w-9 place-items-center rounded-md bg-primary/15 text-primary">
-            <span className="text-base font-black tracking-tight">GK</span>
-          </div>
-          <div className="text-lg font-black tracking-tight">
-            GKM<span className="text-primary">.</span>
-          </div>
+          <img
+            src={logoAsset.url}
+            alt="GKM Imóveis"
+            className="h-9 w-auto"
+          />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
@@ -461,12 +461,11 @@ function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <div>
             <div className="flex items-center gap-2">
-              <div className="grid h-9 w-9 place-items-center rounded-md bg-primary/15 text-primary">
-                <span className="text-base font-black">GK</span>
-              </div>
-              <div className="text-lg font-black">
-                GKM<span className="text-primary">.</span> Imóveis
-              </div>
+              <img
+                src={logoAsset.url}
+                alt="GKM Imóveis"
+                className="h-9 w-auto"
+              />
             </div>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               A GKM Imóveis nasceu de um sonho construído na base de coragem, trabalho e propósito.
