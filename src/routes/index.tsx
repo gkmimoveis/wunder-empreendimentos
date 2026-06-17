@@ -1,22 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useRef } from "react";
-import { MapPin, Play, Images, Menu, X, Phone, Instagram, Facebook, Check, Building2, Home, Car, Ruler } from "lucide-react";
+import { MapPin, Play, Images, Menu, X, Phone, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import logoAsset from "@/assets/logo-gkm.png.asset.json";
 import cidadeAsset from "@/assets/estancia-velha-rs.webp.asset.json";
-import hc06 from "@/assets/hc-06.jpg.asset.json";
-import hcCapa from "@/assets/hc-capa.jpg.asset.json";
-import hcLazer from "@/assets/hc-lazer.jpg.asset.json";
-import hcSala from "@/assets/hc-sala.jpg.asset.json";
-import hcTerraco from "@/assets/hc-terraco.jpg.asset.json";
-import hc07 from "@/assets/hc-07.jpg.asset.json";
-import hc11 from "@/assets/hc-11.jpg.asset.json";
-import hc12 from "@/assets/hc-12.jpg.asset.json";
-import hc20 from "@/assets/hc-20.jpg.asset.json";
-import hc21 from "@/assets/hc-21.jpg.asset.json";
-import hc22 from "@/assets/hc-22.jpg.asset.json";
+import hcPrincipal from "@/assets/highcenter-principal.jpg.asset.json";
+import hcLazer from "@/assets/highcenter-lazer.jpg.asset.json";
+import hcSala from "@/assets/highcenter-sala.jpg.asset.json";
+import hcTerraco from "@/assets/highcenter-terraco.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -121,11 +114,7 @@ function Header() {
     <header className="sticky top-0 z-40 border-b border-white/5 bg-background/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#hero" className="flex items-center gap-2">
-          <img
-            src={logoAsset.url}
-            alt="GKM Imóveis"
-            className="h-9 w-auto"
-          />
+          <img src={logoAsset.url} alt="GKM Imóveis" className="h-9 w-auto" />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
@@ -244,19 +233,7 @@ function Hero() {
   );
 }
 
-const wunderHighCenterImagens = [
-  hcCapa.url,
-  hcLazer.url,
-  hcSala.url,
-  hcTerraco.url,
-  hc06.url,
-  hc07.url,
-  hc11.url,
-  hc12.url,
-  hc20.url,
-  hc21.url,
-  hc22.url,
-];
+const wunderHighCenterImagens = [hcPrincipal.url, hcLazer.url, hcSala.url, hcTerraco.url];
 
 function WunderHighCenter() {
   const [open, setOpen] = useState(false);
@@ -275,45 +252,17 @@ function WunderHighCenter() {
             <span>Estância Velha, RS</span>
           </div>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            O Wunder High Center é o mais novo empreendimento de alto padrão da região, unindo
-            arquitetura contemporânea, área de lazer completa e localização privilegiada no coração
-            de Estância Velha. Projetado para quem busca conforto, segurança e qualidade de vida,
-            com unidades amplas, acabamento premium e vista panorâmica da cidade.
+            O Wunder High Center é o mais novo empreendimento de alto padrão da região, unindo arquitetura
+            contemporânea, área de lazer completa e localização privilegiada no coração de Estância Velha. Projetado
+            para quem busca conforto, segurança e qualidade de vida, com unidades amplas, acabamento premium e vista
+            panorâmica da cidade.
           </p>
           <ul className="mt-5 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
-            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500 shrink-0" /> Apartamentos de 2 e 3 dormitórios</li>
-            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500 shrink-0" /> Piscina, academia e salão de festas</li>
-            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500 shrink-0" /> Portaria 24h e segurança integrada</li>
-            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500 shrink-0" /> Sacada gourmet com churrasqueira</li>
+            <li>• Apartamentos de 2 e 3 dormitórios</li>
+            <li>• Piscina, academia e salão de festas</li>
+            <li>• Portaria 24h e segurança integrada</li>
+            <li>• Sacada gourmet com churrasqueira</li>
           </ul>
-
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <div className="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-card p-4 text-center">
-              <div className="grid h-10 w-10 place-items-center rounded-full bg-primary/10">
-                <Building2 className="h-5 w-5 text-primary" />
-              </div>
-              <span className="text-xs font-medium text-muted-foreground">12 Pavimentos</span>
-            </div>
-            <div className="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-card p-4 text-center">
-              <div className="grid h-10 w-10 place-items-center rounded-full bg-primary/10">
-                <Home className="h-5 w-5 text-primary" />
-              </div>
-              <span className="text-xs font-medium text-muted-foreground">35 Apartamentos</span>
-            </div>
-            <div className="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-card p-4 text-center">
-              <div className="grid h-10 w-10 place-items-center rounded-full bg-primary/10">
-                <Car className="h-5 w-5 text-primary" />
-              </div>
-              <span className="text-xs font-medium text-muted-foreground">2 Box por unidade</span>
-            </div>
-            <div className="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-card p-4 text-center">
-              <div className="grid h-10 w-10 place-items-center rounded-full bg-primary/10">
-                <Ruler className="h-5 w-5 text-primary" />
-              </div>
-              <span className="text-xs font-medium text-muted-foreground">4 Coberturas com 200m²</span>
-            </div>
-          </div>
-
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
               <Button
@@ -330,14 +279,6 @@ function WunderHighCenter() {
               className="w-full border-white/15 bg-transparent text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground sm:w-auto"
             >
               <Images className="mr-2 h-5 w-5" /> Ver galeria
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => setOpen(true)}
-              className="w-full border-white/15 bg-transparent text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground sm:w-auto"
-            >
-              <Images className="mr-2 h-5 w-5" /> Ver plantas
             </Button>
           </div>
         </div>
@@ -598,18 +539,23 @@ function SobreCidade() {
             <Badge className="rounded-md border-0 bg-primary px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-primary-foreground">
               Conheça Estância Velha-RS
             </Badge>
-            <h3 className="text-2xl font-black tracking-tight sm:text-3xl">68 anos de História</h3>
+            <h3 className="text-2xl font-black tracking-tight sm:text-3xl">
+              Estância Velha: perto de tudo, perfeita para viver
+            </h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Conhecida internacionalmente como Capital Nacional do Couro, Estância Velha é um município charmoso
-              localizado na Região Metropolitana de Porto Alegre, bem na encosta da Serra Gaúcha.
+              Localizada entre Porto Alegre e Gramado, ao lado de Novo Hamburgo, Estância Velha combina qualidade de
+              vida, segurança e praticidade.
             </p>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              O título de Capital do Couro não é à toa. Historicamente, a cidade se desenvolveu ao redor do curtume e da
-              indústria calçadista, moldando a economia e a identidade dos moradores.
+              Com ruas arborizadas, baixa incidência de alagamentos, economia em crescimento e um forte espírito
+              comunitário, a cidade oferece o equilíbrio ideal entre tranquilidade e desenvolvimento.
             </p>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Mesmo estando perto da capital e de grandes centros urbanos como Novo Hamburgo, Estância Velha mantém seu
-              ar de cidade acolhedora de interior, com ruas arborizadas e uma rotina tranquila.
+              Além disso, tradições como o Kerb, o Natal Família e a Rota das Cervejarias ajudam a tornar a vida por
+              aqui ainda mais especial.
+            </p>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Venha conhecer Estância Velha. Uma cidade acolhedora, pronta para receber você e sua família.
             </p>
           </div>
           <div className="overflow-hidden rounded-xl">
@@ -633,11 +579,7 @@ function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <div>
             <div className="flex items-center gap-2">
-              <img
-                src={logoAsset.url}
-                alt="GKM Imóveis"
-                className="h-9 w-auto"
-              />
+              <img src={logoAsset.url} alt="GKM Imóveis" className="h-9 w-auto" />
             </div>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               A GKM Imóveis nasceu de um sonho construído na base de coragem, trabalho e propósito.
