@@ -7,6 +7,10 @@ import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/
 import logoAsset from "@/assets/logo-gkm.png.asset.json";
 import cidadeAsset from "@/assets/estancia-velha-rs.webp.asset.json";
 import hc06 from "@/assets/hc-06.jpg.asset.json";
+import hcCapa from "@/assets/hc-capa.jpg.asset.json";
+import hcLazer from "@/assets/hc-lazer.jpg.asset.json";
+import hcSala from "@/assets/hc-sala.jpg.asset.json";
+import hcTerraco from "@/assets/hc-terraco.jpg.asset.json";
 import hc07 from "@/assets/hc-07.jpg.asset.json";
 import hc11 from "@/assets/hc-11.jpg.asset.json";
 import hc12 from "@/assets/hc-12.jpg.asset.json";
@@ -241,6 +245,10 @@ function Hero() {
 }
 
 const wunderHighCenterImagens = [
+  hcCapa.url,
+  hcLazer.url,
+  hcSala.url,
+  hcTerraco.url,
   hc06.url,
   hc07.url,
   hc11.url,
