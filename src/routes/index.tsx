@@ -6,10 +6,17 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import logoAsset from "@/assets/logo-gkm.png.asset.json";
 import cidadeAsset from "@/assets/estancia-velha-rs.webp.asset.json";
-import hcPrincipal from "@/assets/highcenter-principal.jpg.asset.json";
-import hcLazer from "@/assets/highcenter-lazer.jpg.asset.json";
-import hcSala from "@/assets/highcenter-sala.jpg.asset.json";
-import hcTerraco from "@/assets/highcenter-terraco.jpg.asset.json";
+import hcCapa from "@/assets/hc-capa.jpg.asset.json";
+import hcLazer from "@/assets/hc-lazer.jpg.asset.json";
+import hcSala from "@/assets/hc-sala.jpg.asset.json";
+import hcTerraco from "@/assets/hc-terraco.jpg.asset.json";
+import hc06 from "@/assets/hc-06.jpg.asset.json";
+import hc07 from "@/assets/hc-07.jpg.asset.json";
+import hc11 from "@/assets/hc-11.jpg.asset.json";
+import hc12 from "@/assets/hc-12.jpg.asset.json";
+import hc20 from "@/assets/hc-20.jpg.asset.json";
+import hc21 from "@/assets/hc-21.jpg.asset.json";
+import hc22 from "@/assets/hc-22.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
